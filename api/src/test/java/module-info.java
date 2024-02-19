@@ -21,36 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.sebastiantoepfer.common.condition4j;
 
-import java.util.Objects;
-import java.util.function.Predicate;
-
-public interface Fulfilable<T> {
-    boolean isFulfilledBy(T value);
-
-    default Verification<T> asVerification(final String message) {
-        return new Verification<>(this, message);
-    }
-
-    default Predicate<T> asPredicate() {
-        return this::isFulfilledBy;
-    }
-
-    public static final class Verification<T> {
-
-        private final Fulfilable<T> condition;
-        private final String message;
-
-        private Verification(final Fulfilable<T> condition, final String message) {
-            this.condition = Objects.requireNonNull(condition);
-            this.message = Objects.requireNonNull(message);
-        }
-
-        public void check(final T value) {
-            if (!condition.isFulfilledBy(value)) {
-                throw new IllegalArgumentException(message);
-            }
-        }
-    }
+open module io.github.sebastiantoepfer.common.condition4j {
+    requires org.junit.jupiter.api;
 }
