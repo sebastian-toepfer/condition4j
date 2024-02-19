@@ -1,0 +1,17 @@
+---
+name: release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'version number'
+        required: true
+        type: string
+
+jobs:
+  release:
+    uses: sebastian-toepfer/gh-common/.github/workflows/release.yml@v1
+    with:
+      version: ${{ inputs.version }}
+      versionBumpType: bump-patch
+    secrets: inherit
