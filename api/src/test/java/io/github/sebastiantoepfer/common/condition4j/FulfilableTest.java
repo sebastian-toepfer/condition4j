@@ -39,8 +39,7 @@ class FulfilableTest {
             assertThrowsExactly(
                 IllegalArgumentException.class,
                 () -> unfulfillable().asVerification("is invalid").check("")
-            )
-                .getMessage()
+            ).getMessage()
         );
     }
 
