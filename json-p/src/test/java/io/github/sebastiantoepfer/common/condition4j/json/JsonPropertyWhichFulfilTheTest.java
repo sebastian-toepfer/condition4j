@@ -35,8 +35,9 @@ class JsonPropertyWhichFulfilTheTest {
     @Test
     void should_be_fulfilled_if_property_fulfilled_his_condition() {
         assertThat(
-            new JsonPropertyWhichFulfilThe("name", new JsonValueOfType(JsonValue.ValueType.STRING))
-                .isFulfilledBy(Json.createObjectBuilder().add("name", "jane").build()),
+            new JsonPropertyWhichFulfilThe("name", new JsonValueOfType(JsonValue.ValueType.STRING)).isFulfilledBy(
+                Json.createObjectBuilder().add("name", "jane").build()
+            ),
             is(true)
         );
     }
@@ -44,8 +45,9 @@ class JsonPropertyWhichFulfilTheTest {
     @Test
     void should_not_be_fulfilled_if_property_not_fulfilled_his_condition() {
         assertThat(
-            new JsonPropertyWhichFulfilThe("names", new JsonValueOfType(JsonValue.ValueType.ARRAY))
-                .isFulfilledBy(Json.createObjectBuilder().add("names", "jane").build()),
+            new JsonPropertyWhichFulfilThe("names", new JsonValueOfType(JsonValue.ValueType.ARRAY)).isFulfilledBy(
+                Json.createObjectBuilder().add("names", "jane").build()
+            ),
             is(false)
         );
     }
@@ -53,8 +55,9 @@ class JsonPropertyWhichFulfilTheTest {
     @Test
     void should_not_be_fulfilled_if_property_not_in_object() {
         assertThat(
-            new JsonPropertyWhichFulfilThe("name", new JsonValueOfType(JsonValue.ValueType.STRING))
-                .isFulfilledBy(Json.createObjectBuilder().add("names", "jane").build()),
+            new JsonPropertyWhichFulfilThe("name", new JsonValueOfType(JsonValue.ValueType.STRING)).isFulfilledBy(
+                Json.createObjectBuilder().add("names", "jane").build()
+            ),
             is(false)
         );
     }
@@ -65,8 +68,7 @@ class JsonPropertyWhichFulfilTheTest {
             new JsonPropertyWhichFulfilThe(
                 Json.createPointer("/persons/name"),
                 new JsonValueOfType(JsonValue.ValueType.STRING)
-            )
-                .isFulfilledBy(Json.createObjectBuilder().add("name", "jane").build()),
+            ).isFulfilledBy(Json.createObjectBuilder().add("name", "jane").build()),
             is(false)
         );
     }

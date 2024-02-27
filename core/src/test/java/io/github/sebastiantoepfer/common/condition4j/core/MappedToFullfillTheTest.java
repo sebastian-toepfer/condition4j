@@ -37,8 +37,7 @@ class MappedToFullfillTheTest {
             new MappedToFullfillThe<Class<?>, String>(
                 new PredicateCondition<String>(a -> a.equals("List")),
                 cls -> cls.getSimpleName()
-            )
-                .isFulfilledBy(List.class),
+            ).isFulfilledBy(List.class),
             is(true)
         );
     }
@@ -49,8 +48,7 @@ class MappedToFullfillTheTest {
             new MappedToFullfillThe<Class<?>, String>(
                 new PredicateCondition<String>(a -> a.equals("List")),
                 cls -> cls.getCanonicalName()
-            )
-                .isFulfilledBy(List.class),
+            ).isFulfilledBy(List.class),
             is(false)
         );
     }

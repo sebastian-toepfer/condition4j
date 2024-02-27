@@ -35,8 +35,9 @@ class ContainsOnlyItemsWhichFulfilTheTest {
     @Test
     void should_be_fullfiled_if_all_value_fullfiled_item_condition() {
         assertThat(
-            new ContainsOnlyItemsWhichFulfilThe<String>(new PredicateCondition<>(s -> s.contains("a")))
-                .isFulfilledBy(List.of("athlete", "whale", "football")),
+            new ContainsOnlyItemsWhichFulfilThe<String>(new PredicateCondition<>(s -> s.contains("a"))).isFulfilledBy(
+                List.of("athlete", "whale", "football")
+            ),
             is(true)
         );
     }
@@ -44,8 +45,9 @@ class ContainsOnlyItemsWhichFulfilTheTest {
     @Test
     void should_not_be_fullfiled_if_any_value_not_fullfiled_item_condition() {
         assertThat(
-            new ContainsOnlyItemsWhichFulfilThe<String>(new PredicateCondition<>(s -> s.contains("a")))
-                .isFulfilledBy(List.of("athlete", "fish", "football")),
+            new ContainsOnlyItemsWhichFulfilThe<String>(new PredicateCondition<>(s -> s.contains("a"))).isFulfilledBy(
+                List.of("athlete", "fish", "football")
+            ),
             is(false)
         );
     }
@@ -53,8 +55,9 @@ class ContainsOnlyItemsWhichFulfilTheTest {
     @Test
     void should_not_be_fullfiled_if_all_value_not_fullfiled_item_condition() {
         assertThat(
-            new ContainsOnlyItemsWhichFulfilThe<String>(new PredicateCondition<>(not(s -> s.contains("a"))))
-                .isFulfilledBy(List.of("athlete", "whale", "football")),
+            new ContainsOnlyItemsWhichFulfilThe<String>(
+                new PredicateCondition<>(not(s -> s.contains("a")))
+            ).isFulfilledBy(List.of("athlete", "whale", "football")),
             is(false)
         );
     }

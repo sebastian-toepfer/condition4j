@@ -36,8 +36,7 @@ class AnyOfTest {
             new AnyOf<String>(
                 new PredicateCondition<>(s -> s.contains("z")),
                 new PredicateCondition<>(s -> s.contains("c"))
-            )
-                .isFulfilledBy("abc"),
+            ).isFulfilledBy("abc"),
             is(true)
         );
     }
@@ -48,8 +47,7 @@ class AnyOfTest {
             new AnyOf<String>(
                 new PredicateCondition<>(s -> s.contains("x")),
                 new PredicateCondition<>(s -> s.contains("y"))
-            )
-                .isFulfilledBy("abc"),
+            ).isFulfilledBy("abc"),
             is(false)
         );
     }

@@ -36,8 +36,7 @@ class AllOfTest {
             new AllOf<String>(
                 new PredicateCondition<>(s -> s.contains("a")),
                 new PredicateCondition<>(s -> s.contains("c"))
-            )
-                .isFulfilledBy("abc"),
+            ).isFulfilledBy("abc"),
             is(true)
         );
     }
@@ -48,8 +47,7 @@ class AllOfTest {
             new AllOf<String>(
                 new PredicateCondition<>(s -> s.contains("a")),
                 new PredicateCondition<>(s -> s.contains("d"))
-            )
-                .isFulfilledBy("abc"),
+            ).isFulfilledBy("abc"),
             is(false)
         );
     }
