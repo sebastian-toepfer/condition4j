@@ -36,9 +36,8 @@ class FulfilableTest {
     void should_throw_exception_if_not_fulfilled() {
         assertEquals(
             "is invalid",
-            assertThrowsExactly(
-                IllegalArgumentException.class,
-                () -> unfulfillable().asVerification("is invalid").check("")
+            assertThrowsExactly(IllegalArgumentException.class, () ->
+                unfulfillable().asVerification("is invalid").check("")
             ).getMessage()
         );
     }

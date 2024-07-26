@@ -34,9 +34,8 @@ class MappedToFullfillTheTest {
     @Test
     void should_map_value_to_fullfil_condition() {
         assertThat(
-            new MappedToFullfillThe<Class<?>, String>(
-                new PredicateCondition<String>(a -> a.equals("List")),
-                cls -> cls.getSimpleName()
+            new MappedToFullfillThe<Class<?>, String>(new PredicateCondition<String>(a -> a.equals("List")), cls ->
+                cls.getSimpleName()
             ).isFulfilledBy(List.class),
             is(true)
         );
@@ -45,9 +44,8 @@ class MappedToFullfillTheTest {
     @Test
     void should_map_value_to_not_fullfil_condition() {
         assertThat(
-            new MappedToFullfillThe<Class<?>, String>(
-                new PredicateCondition<String>(a -> a.equals("List")),
-                cls -> cls.getCanonicalName()
+            new MappedToFullfillThe<Class<?>, String>(new PredicateCondition<String>(a -> a.equals("List")), cls ->
+                cls.getCanonicalName()
             ).isFulfilledBy(List.class),
             is(false)
         );
