@@ -30,7 +30,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-class VarArgs<T> extends AbstractCollection<T> {
+final class VarArgs<T> extends AbstractCollection<T> {
 
     private final T first;
     private final List<T> values;

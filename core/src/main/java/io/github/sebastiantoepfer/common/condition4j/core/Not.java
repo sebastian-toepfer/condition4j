@@ -26,7 +26,7 @@ package io.github.sebastiantoepfer.common.condition4j.core;
 import io.github.sebastiantoepfer.common.condition4j.Fulfilable;
 import java.util.Objects;
 
-class Not<T> implements Fulfilable<T> {
+public final class Not<T> implements Fulfilable<T> {
 
     private final Fulfilable<T> conditionToNegate;
 
