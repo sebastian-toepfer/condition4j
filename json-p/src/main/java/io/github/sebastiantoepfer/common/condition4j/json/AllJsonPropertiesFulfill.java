@@ -28,7 +28,7 @@ import jakarta.json.JsonObject;
 import jakarta.json.JsonValue;
 import java.util.Objects;
 
-public class AllJsonPropertiesFulfill implements Fulfilable<JsonObject> {
+public final class AllJsonPropertiesFulfill implements Fulfilable<JsonObject> {
 
     private final Fulfilable<JsonValue> propertyCondition;
 
